@@ -188,11 +188,11 @@
             this.lblAuthor.AutoSize = true;
             this.lblAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAuthor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
-            this.lblAuthor.Location = new System.Drawing.Point(253, 238);
+            this.lblAuthor.Location = new System.Drawing.Point(252, 238);
             this.lblAuthor.Name = "lblAuthor";
-            this.lblAuthor.Size = new System.Drawing.Size(65, 13);
+            this.lblAuthor.Size = new System.Drawing.Size(66, 13);
             this.lblAuthor.TabIndex = 15;
-            this.lblAuthor.Text = "by xFaNaTiix";
+            this.lblAuthor.Text = "by marvinl97";
             this.lblAuthor.Click += new System.EventHandler(this.lblAuthor_Click);
             // 
             // cmdFovReset
