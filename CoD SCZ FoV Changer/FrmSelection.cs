@@ -55,7 +55,6 @@ namespace CoD_SCZ_FoV_Changer
             {
                 FovPointer = new Memory.Pointer((IntPtr)0x0328EB70, new short[] {0x10}),
                 FovScalePointer = new Memory.Pointer((IntPtr)0x03288A04, new short[] {0x10})
-                //or: FovScalePointer = new Memory.Pointer((IntPtr)0x0328EB70, new short[] { 0x6C });
             };
             _cods.Add(waw);
 
@@ -63,7 +62,6 @@ namespace CoD_SCZ_FoV_Changer
             {
                 FovPointer = new Memory.Pointer((IntPtr)0x0045E968, new short[] {0x10}),
                 FovScalePointer = new Memory.Pointer((IntPtr)0x0045E854, new short[] {0x10})
-                //or: FovScalePointer = new Memory.Pointer((IntPtr)0x0045E968, new short[] { 0x6C });
             };
             _cods.Add(mw2);
 
@@ -71,9 +69,15 @@ namespace CoD_SCZ_FoV_Changer
             {
                 FovPointer = new Memory.Pointer((IntPtr)0x02BF6888, new short[] {0x18}),
                 FovScalePointer = new Memory.Pointer((IntPtr)0x02BF66A8, new short[] {0x18})
-                //or: FovScalePointer = new Memory.Pointer((IntPtr)0x02BF6888, new short[] { 0x88 });
             };
             _cods.Add(bo1);
+
+            var mw3 = new CallOfDuty("Call of Duty: Modern Warfare 3", "iw5sp", 42680)
+            {
+                FovPointer = new Memory.Pointer((IntPtr)0x676130, new short[] {0xC}),
+                FovScalePointer = new Memory.Pointer((IntPtr)0x0067601C, new short[] {0xC})
+            };
+            _cods.Add(mw3);
         }
 
         private void Select(CallOfDuty cod)

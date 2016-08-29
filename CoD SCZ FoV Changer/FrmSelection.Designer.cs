@@ -46,7 +46,7 @@
             this.lstCoDs.Location = new System.Drawing.Point(0, 0);
             this.lstCoDs.Name = "lstCoDs";
             this.lstCoDs.ScrollAlwaysVisible = true;
-            this.lstCoDs.Size = new System.Drawing.Size(344, 68);
+            this.lstCoDs.Size = new System.Drawing.Size(344, 90);
             this.lstCoDs.TabIndex = 0;
             this.lstCoDs.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstCoDs_KeyDown);
             this.lstCoDs.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstCoDs_MouseDoubleClick);
@@ -56,7 +56,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(344, 68);
+            this.ClientSize = new System.Drawing.Size(344, 90);
             this.Controls.Add(this.lstCoDs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

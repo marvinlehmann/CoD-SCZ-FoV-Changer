@@ -12,6 +12,7 @@ These variables can be changed with binds (bind KEY "cg_fov XX") in the single p
 - Call of Duty: World at War ( singleplayer, co-op, zombies (solo & co-op) )
 - Call of Duty: Modern Warfare 2 ( singleplayer, special ops (solo & co-op) )
 - Call of Duty: Black Ops 1 ( singleplayer, zombies (solo & co-op) )
+- Call of Duty: Modern Warfare 3 ( singleplayer, special ops (solo & co-op) )
 
 ### Requirements
 - Windows Vista or newer
