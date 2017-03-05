@@ -4,7 +4,11 @@ A non-multiplayer field of view changer for various Call of Duty games.
 **SCZ** stands for: **S**ingleplayer + **C**O-OP + **Z**ombies
 
 This field of view changer allows you to change the game variables **cg_fov** (0-360) and **cg_fovScale** (1.0 - 2.0) easily.
-These variables can be changed with binds (bind KEY "cg_fov XX") in the single player mode but in co-op they are cheat/write protected. If you use this program, you don't need a console, a bind or even a modded version of the game to change the field of view to your liking. With an optimal field of view you won't experience eye strain, headaches or motion sickness. 
+These variables can be changed with binds (bind KEY "cg_fov XX") in the single player mode but in co-op they are cheat/write protected. If you use this program, you don't need a console, a bind or even a modded version of the game to change the field of view to your liking. With an optimal field of view you won't experience eye strain, headaches or motion sickness.
+
+**CALL OF DUTY** is a trademark of **Activision Publishing, Inc.**
+
+This project is **not** affiliated with them in any way and no copyright infringement is intended.
 
 ## Compatibility
 
