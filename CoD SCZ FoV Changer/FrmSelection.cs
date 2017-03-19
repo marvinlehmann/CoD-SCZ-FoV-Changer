@@ -51,6 +51,13 @@ namespace CoD_SCZ_FoV_Changer
 
         private void AddCoDs()
         {
+            /*var mw1 = new CallOfDuty("Call of Duty: Modern Warfare 1", "iw3sp", 10180)
+            {
+                FovPointer = new Memory.Pointer((IntPtr)0x007F77CC, new short[] {0xC}),
+                FovScalePointer = null // non-existent?
+            };
+            _cods.Add(mw1);*/
+
             var waw = new CallOfDuty("Call of Duty: World at War", "CoDWaW", 10090)
             {
                 FovPointer = new Memory.Pointer((IntPtr)0x0328EB70, new short[] {0x10}),
@@ -74,7 +81,7 @@ namespace CoD_SCZ_FoV_Changer
 
             var mw3 = new CallOfDuty("Call of Duty: Modern Warfare 3", "iw5sp", 42680)
             {
-                FovPointer = new Memory.Pointer((IntPtr)0x676130, new short[] {0xC}),
+                FovPointer = new Memory.Pointer((IntPtr)0x00676130, new short[] {0xC}),
                 FovScalePointer = new Memory.Pointer((IntPtr)0x0067601C, new short[] {0xC})
             };
             _cods.Add(mw3);

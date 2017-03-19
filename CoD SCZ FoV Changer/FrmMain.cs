@@ -216,12 +216,12 @@ namespace CoD_SCZ_FoV_Changer
 
         private void lblGithub_Click(object sender, EventArgs e)
         {
-            Process.Start("https://github.com/marvinl97/CoD-SCZ-FoV-Changer");
+            Process.Start("https://github.com/marvinlehmann/CoD-SCZ-FoV-Changer");
         }
 
         private void lblVersion_Click(object sender, EventArgs e)
         {
-            Process.Start("https://github.com/marvinl97/CoD-SCZ-FoV-Changer/releases");
+            Process.Start("https://github.com/marvinlehmann/CoD-SCZ-FoV-Changer/releases");
         }
 
         /// <summary>
