@@ -56,4 +56,4 @@ Examples:
 
 
 
-Credits to **[AgentRev](https://github.com/AgentRev)** for the beep sounds!
+Credits to **[AgentRev](https://github.com/AgentRev)** for the beepy sounds!
