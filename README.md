@@ -26,7 +26,7 @@ This project is **not** affiliated with them in any way and no copyright infring
 ### Anti-Cheat (VAC & PunkBuster)
 All supported CoDs don't use VAC or PunkBuster in the singleplayer executables, so you should be on the safe side as long as you don't use it when cheat-secured games are running! 
 
-**Nevertheless I am NOT responsible for any bans or damages! Use at your own risk!**
+**Nevertheless I am NOT responsible for any bans or damages! Use at your own risk!!!**
 
 
 ## Usage
