@@ -8,21 +8,23 @@ namespace CoD_SCZ_FoV_Changer
     {
         private readonly string _processName;
 
+        private Process _targetProcess;
+
         public Memory(string processName)
         {
             _processName = processName;
         }
 
-        public int ProcessId { get; set; }
-
-        private int GetProcessId()
+        public Process TargetProcess
         {
-            if (ProcessId == 0)
+            get
             {
-                var window = Process.GetProcessesByName(_processName);
-                ProcessId = window.Length == 0 ? 0 : window[0].Id;
+                if (_targetProcess != null) return _targetProcess;
+                var processes = Process.GetProcessesByName(_processName);
+                _targetProcess = processes.Length == 0 ? null : processes[0];
+                return _targetProcess;
             }
-            return ProcessId;
+            set { _targetProcess = value; }
         }
 
         public bool IsRunning()
@@ -33,7 +35,7 @@ namespace CoD_SCZ_FoV_Changer
 
         public bool Write(IntPtr lpBaseAddress, byte[] lpBuffer)
         {
-            var processHandle = NativeMethods.OpenProcess(NativeMethods.ProcessAccessFlags.VirtualMemoryWrite | NativeMethods.ProcessAccessFlags.VirtualMemoryOperation, false, GetProcessId());
+            var processHandle = NativeMethods.OpenProcess(NativeMethods.ProcessAccessFlags.VirtualMemoryWrite | NativeMethods.ProcessAccessFlags.VirtualMemoryOperation, false, TargetProcess.Id);
             if (processHandle != IntPtr.Zero)
             {
                 UIntPtr bytesRead;
@@ -57,7 +59,7 @@ namespace CoD_SCZ_FoV_Changer
 
         public byte[] Read(IntPtr lpBaseAddress, int length)
         {
-            var processHandle = NativeMethods.OpenProcess(NativeMethods.ProcessAccessFlags.VirtualMemoryRead, false, GetProcessId());
+            var processHandle = NativeMethods.OpenProcess(NativeMethods.ProcessAccessFlags.VirtualMemoryRead, false, TargetProcess.Id);
             if (processHandle != IntPtr.Zero)
             {
                 var buffer = new byte[length];
@@ -71,35 +73,46 @@ namespace CoD_SCZ_FoV_Changer
 
         public int ReadInt(IntPtr address)
         {
-            return BitConverter.ToInt32(Read(address, 4), 0);
+            return BitConverter.ToInt32(Read(address, sizeof(int)), 0);
+        }
+
+        public long ReadLong(IntPtr address)
+        {
+            return BitConverter.ToInt64(Read(address, sizeof(long)), 0);
         }
 
         public float ReadFloat(IntPtr address)
         {
-            return BitConverter.ToSingle(Read(address, 4), 0);
+            return BitConverter.ToSingle(Read(address, sizeof(float)), 0);
+        }
+
+        public IntPtr ReadAddress(IntPtr address)
+        {
+            return (IntPtr)ReadLong(address);
         }
 
 
-        public IntPtr ReadPointerAddress(Pointer pointer, int baseAddress = 0x400000)
+        public IntPtr ReadPointerAddress(MultiLevelPointer pointer, bool addBaseAddress)
         {
-            var address = IntPtr.Add(pointer.Address, baseAddress);
+            var address = pointer.Address;
+            var baseAddress = GetBaseAddress();
+
+            if (addBaseAddress)
+                address = new IntPtr(baseAddress.ToInt64() + address.ToInt64());
+
             foreach (var offset in pointer.Offsets)
-            {
-                address = IntPtr.Add((IntPtr)ReadInt(address), offset);
-            }
+                address = IntPtr.Add(ReadAddress(address), offset);
             return address;
         }
 
-        public IntPtr GetMainModuleBaseAddress(string prog)
+        public IntPtr GetBaseAddress()
         {
-            var p = Process.GetProcessesByName(prog);
-            var baseAddress = p[0].MainModule.BaseAddress;
-            return baseAddress;
+            return TargetProcess?.MainModule.BaseAddress ?? IntPtr.Zero;
         }
 
-        public class Pointer
+        public class MultiLevelPointer
         {
-            public Pointer(IntPtr address, short[] offsets)
+            public MultiLevelPointer(IntPtr address, short[] offsets)
             {
                 Address = address;
                 Offsets = offsets;

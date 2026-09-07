@@ -51,38 +51,17 @@ namespace CoD_SCZ_FoV_Changer
 
         private void AddCoDs()
         {
-            /*var mw1 = new CallOfDuty("Call of Duty: Modern Warfare 1", "iw3sp", 10180)
-            {
-                FovPointer = new Memory.Pointer((IntPtr)0x007F77CC, new short[] {0xC}),
-                FovScalePointer = null // non-existent?
-            };
-            _cods.Add(mw1);*/
-
-            var waw = new CallOfDuty("Call of Duty: World at War", "CoDWaW", 10090)
-            {
-                FovPointer = new Memory.Pointer((IntPtr)0x0328EB70, new short[] {0x10}),
-                FovScalePointer = new Memory.Pointer((IntPtr)0x03288A04, new short[] {0x10})
-            };
-            _cods.Add(waw);
-
             var mw2 = new CallOfDuty("Call of Duty: Modern Warfare 2", "iw4sp", 10180)
             {
-                FovPointer = new Memory.Pointer((IntPtr)0x0045E968, new short[] {0x10}),
-                FovScalePointer = new Memory.Pointer((IntPtr)0x0045E854, new short[] {0x10})
+                FovPointer = new Memory.MultiLevelPointer((IntPtr)0x51e1a8, new short[] { 0x10 }),
+                FovScalePointer = new Memory.MultiLevelPointer((IntPtr)0x51e1b8, new short[] { 0x10 })
             };
             _cods.Add(mw2);
 
-            var bo1 = new CallOfDuty("Call of Duty: Black Ops", "BlackOps", 42700)
-            {
-                FovPointer = new Memory.Pointer((IntPtr)0x02BF6888, new short[] {0x18}),
-                FovScalePointer = new Memory.Pointer((IntPtr)0x02BF66A8, new short[] {0x18})
-            };
-            _cods.Add(bo1);
-
             var mw3 = new CallOfDuty("Call of Duty: Modern Warfare 3", "iw5sp", 42680)
             {
-                FovPointer = new Memory.Pointer((IntPtr)0x00676130, new short[] {0xC}),
-                FovScalePointer = new Memory.Pointer((IntPtr)0x0067601C, new short[] {0xC})
+                FovPointer = new Memory.MultiLevelPointer((IntPtr)0x62ce60, new short[] { 0x10 }),
+                FovScalePointer = new Memory.MultiLevelPointer((IntPtr)0x62ce78, new short[] { 0x10 })
             };
             _cods.Add(mw3);
         }

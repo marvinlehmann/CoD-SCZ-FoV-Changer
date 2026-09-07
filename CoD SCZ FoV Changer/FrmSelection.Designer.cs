@@ -46,7 +46,7 @@
             this.lstCoDs.Location = new System.Drawing.Point(0, 0);
             this.lstCoDs.Name = "lstCoDs";
             this.lstCoDs.ScrollAlwaysVisible = true;
-            this.lstCoDs.Size = new System.Drawing.Size(344, 90);
+            this.lstCoDs.Size = new System.Drawing.Size(404, 90);
             this.lstCoDs.TabIndex = 0;
             this.lstCoDs.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstCoDs_KeyDown);
             this.lstCoDs.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstCoDs_MouseDoubleClick);
@@ -56,16 +56,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(344, 90);
+            this.ClientSize = new System.Drawing.Size(404, 90);
             this.Controls.Add(this.lstCoDs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(360, 176);
+            this.MaximumSize = new System.Drawing.Size(420, 176);
             this.MinimumSize = new System.Drawing.Size(360, 66);
             this.Name = "FrmSelection";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "CoD SCZ FoV Changer - CoD Selection";
+            this.Text = "CoD SCZ FoV Changer - CoD Selection (64-Bit only!!)";
             this.Load += new System.EventHandler(this.FrmSelection_Load);
             this.Shown += new System.EventHandler(this.FrmSelection_Shown);
             this.ResumeLayout(false);

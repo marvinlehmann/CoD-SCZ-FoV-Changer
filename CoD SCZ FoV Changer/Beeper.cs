@@ -7,9 +7,9 @@ namespace CoD_SCZ_FoV_Changer
     {
         // Credits to AgentRev ( https://github.com/AgentRev ) for the beep sounds!
         private static readonly SoundPlayer SndActivated = new SoundPlayer(Resources.activated);
-        private static readonly SoundPlayer SndDectivated = new SoundPlayer(Resources.deactivated);
+        private static readonly SoundPlayer SndDeactivated = new SoundPlayer(Resources.deactivated);
         private static bool _sndPlayedActivated;
-        private static bool _sndPlayedDectivated = true;
+        private static bool _sndPlayedDeactivated = true;
 
         public static bool Enabled { get; set; }
 
@@ -21,15 +21,15 @@ namespace CoD_SCZ_FoV_Changer
                 SndActivated.PlaySync();
                 _sndPlayedActivated = true;
             }
-            _sndPlayedDectivated = false;
+            _sndPlayedDeactivated = false;
         }
 
         public static void BeepDeactivated()
         {
-            if (!_sndPlayedDectivated && Enabled)
+            if (!_sndPlayedDeactivated && Enabled)
             {
-                SndDectivated.PlaySync();
-                _sndPlayedDectivated = true;
+                SndDeactivated.PlaySync();
+                _sndPlayedDeactivated = true;
             }
             _sndPlayedActivated = false;
         }

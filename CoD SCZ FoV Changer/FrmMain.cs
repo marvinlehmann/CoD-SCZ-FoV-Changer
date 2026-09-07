@@ -52,8 +52,12 @@ namespace CoD_SCZ_FoV_Changer
             }
             catch (ConfigurationErrorsException ex)
             {
-                var filename = ((ConfigurationErrorsException)ex.InnerException).Filename;
-                File.Delete(filename);
+                var innerException = (ConfigurationErrorsException)ex.InnerException;
+                if (innerException != null)
+                {
+                    var filename = innerException.Filename;
+                    File.Delete(filename);
+                }
             }
 
             var selection = new FrmSelection(Settings.Default.AutoSelect);
@@ -95,8 +99,8 @@ namespace CoD_SCZ_FoV_Changer
                     {
                         if (!_cod.FovPointer.IsPointingCorrectly(_addrFoV) || !_cod.FovScalePointer.IsPointingCorrectly(_addrFoVScale))
                         {
-                            _addrFoV = _memory.ReadPointerAddress(_cod.FovPointer);
-                            _addrFoVScale = _memory.ReadPointerAddress(_cod.FovScalePointer);
+                            _addrFoV = _memory.ReadPointerAddress(_cod.FovPointer, true);
+                            _addrFoVScale = _memory.ReadPointerAddress(_cod.FovScalePointer, true);
                             if (_cod.FovPointer.IsPointingCorrectly(_addrFoV) && _cod.FovScalePointer.IsPointingCorrectly(_addrFoVScale)) Beeper.BeepActivated();
                         }
                         else
@@ -119,7 +123,7 @@ namespace CoD_SCZ_FoV_Changer
 
                     _addrFoV = IntPtr.Zero;
                     _addrFoVScale = IntPtr.Zero;
-                    _memory.ProcessId = 0;
+                    _memory.TargetProcess = null;
 
                     Beeper.BeepDeactivated();
                 }
@@ -160,7 +164,7 @@ namespace CoD_SCZ_FoV_Changer
                     string.Format("{1} could not be started.{0}Are {1} and Steam installed correctly?{0}{0}Error message:{0}{2}{0}{0}Click 'Yes' to open a Steam Support article for a potential fix.", Environment.NewLine, _cod.Name, e),
                     "ERROR", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
                 {
-                    Process.Start("https://support.steampowered.com/kb_article.php?ref=2087-MZES-9065");
+                    Process.Start("https://web.archive.org/web/20160727055919/https://support.steampowered.com/kb_article.php?ref=2087-MZES-9065");
                 }
             }
         }
@@ -207,11 +211,6 @@ namespace CoD_SCZ_FoV_Changer
         private void chkEnableBeep_CheckedChanged(object sender, EventArgs e)
         {
             Beeper.Enabled = ((CheckBox)sender).Checked;
-        }
-
-        private void lblAuthor_Click(object sender, EventArgs e)
-        {
-            Process.Start("http://steamcommunity.com/profiles/76561198037206797");
         }
 
         private void lblGithub_Click(object sender, EventArgs e)

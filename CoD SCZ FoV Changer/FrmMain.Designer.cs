@@ -27,7 +27,6 @@
             this.lblFov = new System.Windows.Forms.Label();
             this.chkBeep = new System.Windows.Forms.CheckBox();
             this.lblVersion = new System.Windows.Forms.Label();
-            this.lblAuthor = new System.Windows.Forms.Label();
             this.cmdFovReset = new System.Windows.Forms.Button();
             this.nudFov = new System.Windows.Forms.NumericUpDown();
             this.lblFovTotal = new System.Windows.Forms.Label();
@@ -66,11 +65,11 @@
             this.lblGithub.AutoSize = true;
             this.lblGithub.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.lblGithub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
-            this.lblGithub.Location = new System.Drawing.Point(116, 237);
+            this.lblGithub.Location = new System.Drawing.Point(232, 238);
             this.lblGithub.Name = "lblGithub";
-            this.lblGithub.Size = new System.Drawing.Size(86, 13);
+            this.lblGithub.Size = new System.Drawing.Size(88, 13);
             this.lblGithub.TabIndex = 14;
-            this.lblGithub.Text = "check on Github";
+            this.lblGithub.Text = "check on GitHub";
             this.lblGithub.Click += new System.EventHandler(this.lblGithub_Click);
             // 
             // txtFovTotal
@@ -183,18 +182,6 @@
             this.lblVersion.Text = "0.0.0.0";
             this.lblVersion.Click += new System.EventHandler(this.lblVersion_Click);
             // 
-            // lblAuthor
-            // 
-            this.lblAuthor.AutoSize = true;
-            this.lblAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAuthor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
-            this.lblAuthor.Location = new System.Drawing.Point(252, 238);
-            this.lblAuthor.Name = "lblAuthor";
-            this.lblAuthor.Size = new System.Drawing.Size(65, 13);
-            this.lblAuthor.TabIndex = 15;
-            this.lblAuthor.Text = "by Marvin L.";
-            this.lblAuthor.Click += new System.EventHandler(this.lblAuthor_Click);
-            // 
             // cmdFovReset
             // 
             this.cmdFovReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
@@ -293,7 +280,6 @@
             this.Controls.Add(this.lblFov);
             this.Controls.Add(this.chkBeep);
             this.Controls.Add(this.lblVersion);
-            this.Controls.Add(this.lblAuthor);
             this.Controls.Add(this.cmdFovReset);
             this.Controls.Add(this.nudFov);
             this.Controls.Add(this.lblFovTotal);
@@ -306,7 +292,7 @@
             this.MinimumSize = new System.Drawing.Size(334, 290);
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CoD SCZ FoV Changer";
+            this.Text = "CoD SCZ FoV Changer (64-Bit)";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudFovScale)).EndInit();
@@ -328,7 +314,6 @@
         internal System.Windows.Forms.Label lblFov;
         private System.Windows.Forms.CheckBox chkBeep;
         private System.Windows.Forms.Label lblVersion;
-        private System.Windows.Forms.Label lblAuthor;
         internal System.Windows.Forms.Button cmdFovReset;
         internal System.Windows.Forms.NumericUpDown nudFov;
         internal System.Windows.Forms.Label lblFovTotal;

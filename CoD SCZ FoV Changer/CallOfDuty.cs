@@ -12,8 +12,8 @@
         public string Name { get; }
         public string ProcessName { get; set; }
         public int SteamAppId { get; set; }
-        public Memory.Pointer FovPointer { get; set; }
-        public Memory.Pointer FovScalePointer { get; set; }
+        public Memory.MultiLevelPointer FovPointer { get; set; }
+        public Memory.MultiLevelPointer FovScalePointer { get; set; }
 
         public override string ToString()
         {
